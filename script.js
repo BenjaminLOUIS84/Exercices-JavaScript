@@ -90,6 +90,7 @@ for (let i = 1; i <= 4; i++) {
             //(remise à l'état d'origine)(CF Fonction en début de code)
 
             showReaction("notice", newbox)
+            
         }
 
     })

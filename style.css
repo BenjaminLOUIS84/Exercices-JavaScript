@@ -12,17 +12,18 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    animation: appear 1s; 
+    animation: appear 1s;
 }
+
 /*Animation apparition des éléments au démarrage (ZOOM)*/
 
 @keyframes appear {
     from {
-        transform: scale(0) 
+        transform: scale(0)
     }
 
     to {
-        transform: scale(1) 
+        transform: scale(1)
     }
 }
 
@@ -62,8 +63,8 @@
     animation: rotateleft 1s;
 
     /*Pour réduire la taille de 10%*/
-    transform: scale(0.9); 
-    
+    transform: scale(0.9);
+
     /*Pour animer le changement de couleur*/
     transition: background-color 0.8s, color 0.8s, transform 0.8s;
 
@@ -71,9 +72,9 @@
 
 .box.notice {
     color: white;
-    background-color:  rgb(115, 145, 5);
+    background-color: rgb(115, 145, 5);
     animation: rotateright 1s;
-    transform: scale(1); 
+    transform: scale(1);
     transition: background-color 0.8s, color 0.8s, transform 0.8s;
 }
 
@@ -106,10 +107,21 @@
 
 @keyframes move {
     from {
-        transform: scale(0) 
+        transform: scale(0)
     }
 
     to {
-        transform: scale(1) 
+        transform: scale(1)
     }
+}
+
+/*RESPONSIVE*/
+@media (min-width: 0) and (max-width: 768px) {
+
+    .box {
+
+        width: 180px;
+        height: 180px;
+    }
+
 }
