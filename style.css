@@ -1,0 +1,115 @@
+/*////////////////////////////////////////////////////////////////////////////*/
+/*EXO1*/
+/*////////////////////////////////////////////////////////////////////////////*/
+
+.carre {
+    background-color: rgb(136, 174, 136);
+    color: rgb(255, 255, 255);
+    height: 200px;
+    width: 200px;
+    display: flex;
+    font-size: 2.5em;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    animation: appear 1s; 
+}
+/*Animation apparition des éléments au démarrage (ZOOM)*/
+
+@keyframes appear {
+    from {
+        transform: scale(0) 
+    }
+
+    to {
+        transform: scale(1) 
+    }
+}
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*EXO2*/
+/*////////////////////////////////////////////////////////////////////////////*/
+
+#carres {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*Ajouter "box" pour améliorer l'élément html*/
+
+.box {
+    width: 200px;
+    height: 200px;
+    background-color: rgb(115, 145, 5);
+    color: white;
+    font-size: 3em;
+    text-align: center;
+    line-height: 4;
+    margin: 5px;
+    cursor: pointer;
+
+    /*Pour faire animer les éléments au démarrage*/
+    animation: move 2s;
+}
+
+/*Change la couleur de la boite quand celle-ci est sélectionée au click*/
+
+.box-valid {
+    background-color: #c21111;
+    color: black;
+
+    /*Pour permettre à l'élément de faire une rotation*/
+    animation: rotateleft 1s;
+
+    /*Pour réduire la taille de 10%*/
+    transform: scale(0.9); 
+    
+    /*Pour animer le changement de couleur*/
+    transition: background-color 0.8s, color 0.8s, transform 0.8s;
+
+}
+
+.box.notice {
+    color: white;
+    background-color:  rgb(115, 145, 5);
+    animation: rotateright 1s;
+    transform: scale(1); 
+    transition: background-color 0.8s, color 0.8s, transform 0.8s;
+}
+
+/*ANIMATIONS*/
+/*Animation rotation 360°*/
+
+@keyframes rotateleft {
+    from {
+        transform: rotate(0deg)
+    }
+
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+/*Animation rotation 360°*/
+
+@keyframes rotateright {
+    from {
+        transform: rotate(360deg)
+    }
+
+    to {
+        transform: rotate(0deg)
+    }
+}
+
+/*Animation apparition des éléments au démarrage (ZOOM)*/
+
+@keyframes move {
+    from {
+        transform: scale(0) 
+    }
+
+    to {
+        transform: scale(1) 
+    }
+}
