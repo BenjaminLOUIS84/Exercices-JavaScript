@@ -74,6 +74,8 @@ for (let i = 1; i <= 4; i++) {
     //Rendre les éléments cliquables
     newbox.addEventListener("click", function () {
         console.log("Elément n°" + i + ": click !")
+        
+
 
         //Pour changer la couleur et la forme des éléments au click
 
