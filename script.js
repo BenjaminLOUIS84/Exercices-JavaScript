@@ -54,11 +54,9 @@ const box = document.createElement("div")
 //Modifier sa propriété classList pour améliorer cet élément dans le CSS en lui ajoutant "box"
 box.classList.add("box")
 
-
 //Pour modifier cet élément dans le JavaScript on peut créer un selecteur de requête (mode plus dynamique)
 //Autre façon possible avec la fonction getElementByID
 const carres = document.querySelector("#carres")
-let nb = 1
 
 //Représenter l'éléement HTML dans une boucle for  
 //pour générer 4 éléments du même type automatiquement avec la fonction cloneNode()
@@ -71,28 +69,31 @@ for (let i = 1; i <= 4; i++) {
     //Pour afficher l'élément HTML dans l'interface
     carres.appendChild(newbox)
 
-    //Rendre les éléments cliquables
+    //Valeur de référence type booléan
+    let state = false
+
+    //Rendre les éléments cliquables en ajoutant un écouteur d'évènements
     newbox.addEventListener("click", function () {
+
         console.log("Elément n°" + i + ": click !")
+        //console.log(nb)
+        console.log(state)
         
 
-
         //Pour changer la couleur et la forme des éléments au click
-
-        if (i === nb) { //L'ordre des chiffres doit être respecté pour que cela fonctionne
-            
-            newbox.classList.add("box-valid")
-
-            //Pour que le changement s'applique à tous les éléments 
-            nb++
+ 
+        if (!state) { // Si l'état est invalide alors changer l'élément et changer son état
+           
+            newbox.classList.add("box-valid") 
+            state = true
 
         }
         else {
-            // Générer une reaction quand l'élément est déjà cliqué
-            //(remise à l'état d'origine)(CF Fonction en début de code)
+            // Générer une réaction (CF Fonction en début de code)
+            //en cliquant une fois de plus sur l'élément déjà changé 
 
             showReaction("notice", newbox)
-            
+            state = false // Pour réinitialiser l'état
         }
 
     })
