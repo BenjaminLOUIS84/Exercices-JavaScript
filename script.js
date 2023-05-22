@@ -79,8 +79,8 @@ for (let i = 1; i <= 4; i++) {
 
         //Pour changer la couleur et la forme des éléments au click
 
-        if (i === nb) { 
-
+        if (i === nb) { //L'ordre des chiffres doit être respecté pour que cela fonctionne
+            
             newbox.classList.add("box-valid")
 
             //Pour que le changement s'applique à tous les éléments 
@@ -99,6 +99,9 @@ for (let i = 1; i <= 4; i++) {
 
 }
 
+//////////////////////////////////////////////////////////////////////////////////////////////
+//EXO 3//
+//////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
