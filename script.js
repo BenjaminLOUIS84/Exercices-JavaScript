@@ -39,14 +39,14 @@ carre.addEventListener("click", function () {
 //(CF Appel de la fonction en fin de code)
 
 //Pour générer une réaction quand l'élément est déjà cliqué
-function showReaction(type, validBox) {
-    validBox.classList.add(type)
-    if (type !== "notice") {
-        setTimeout(function () {
-            validBox.classList.remove(type)
-        }, 400)
-    }
-}
+// function showReaction(type, validBox) {
+//     validBox.classList.add(type)
+//     if (type !== "notice") {
+//         setTimeout(function () {
+//             validBox.classList.remove(type)
+//         }, 400)
+//     }
+// }
 
 //Déclarer l'élément HTML et l'instancier avec la fonction createElement 
 
@@ -61,7 +61,7 @@ box.classList.add("box")
 
 const carres = document.querySelector("#carres")
 
-//Représenter l'éléement HTML dans une boucle for  
+//Représenter l'élément HTML dans une boucle for  
 //pour générer 4 éléments du même type automatiquement avec la fonction cloneNode()
 //Numéroter ces éléments avec innerText
 
@@ -96,7 +96,8 @@ for (let i = 1; i <= 4; i++) {
             // Générer une réaction (CF Fonction en début de code)
             //en cliquant une fois de plus sur l'élément déjà changé 
 
-            showReaction("notice", newbox)
+            newbox.classList.remove("box-valid")
+            // showReaction("notice", newbox)
             state = false // Pour réinitialiser l'état
         }
 
@@ -107,11 +108,87 @@ for (let i = 1; i <= 4; i++) {
 //EXO 3//
 //////////////////////////////////////////////////////////////////////////////////////////////
 
+//Déclarer l'élément HTML de base et l'instancier avec la fonction createElement 
+
+const box1 = document.createElement("div")
+
+//Modifier sa propriété classList pour améliorer cet élément dans le CSS en lui ajoutant "box"
+
+box1.classList.add("box1")
+
+//Pour modifier cet élément dans le JavaScript on peut créer un selecteur de requête (mode plus dynamique)
+
+const grille = document.querySelector("#grille")
 
 
+//Déclarer la variable currentValue en dehors de la boucle for (Cette variable sera affichée dans l'élément modifié)
 
+let currentValue = "X"
 
+//Représenter l'élément HTML de base dans la boucle for pour générer 9 éléments du même type automatiquement avec la fonction cloneNode()
 
+//Assimiler la variable currentValue aux 9 éléments avec innerText pour afficher cette variable au click
+
+for (let i = 1; i <= 9; i++) {
+    const newbox = box1.cloneNode()
+
+    //Pour afficher l'élément HTML de base dans l'interface
+
+    grille.appendChild(newbox)
+
+    //Valeur de référence type booléan
+    let value = false
+
+    //Rendre les éléments de base cliquables en ajoutant un écouteur d'évènements
+
+    newbox.addEventListener("click", function () {
+
+        console.log("Elément n°" + i + ": click !")
+        console.log(value)
+
+        //Pour afficher les deux variables alternativement au click
+
+        if (!value) { // Si la valeur des éléments de base est vide alors ajouter soit "X" soit "O"
+
+            newbox.classList.add("box1-valid")  //Pour afficher les éléments modifiés
+            newbox.innerText = currentValue     //Pour afficher les variables "X" et "O"
+
+            value = true                        //Changer le statut pour vérouiller les éléments modifiés
+
+            if (currentValue === "O") {         //Condition pour excécuter l'alternance des deux variables "X" et "O"
+                                                //Si la variable vaut "O", la suivante vaudra "X"
+                currentValue = "X"
+
+            } else {                            //Sinon le cycle recommence avec la variable vaut "O" et ainsi de suite
+                currentValue = "O"
+            }
+        }
+    })
+
+}
+//Déclarer la variable jeuFin en dehors de la boucle for (Cette variable sera affichée une fois que tous les éléments seront modifiés)
+
+let jeuFin = document.querySelector("h3")
+
+console.log(jeuFin)
+
+jeuFin.forEach(function (element) {
+    element.style.color = "red"
+})
+
+//////////////////////////////////////////////////////////////////////
+//  Ajouter une fonction qui éxécutera une animation pour
+//  faire disparaitre la fenêtre
+
+//setTimeout(function(){
+
+   // document.getElementById('messAdd').style.display= 'none';
+
+//}, 2000);
+
+/////////////////////////////////////////////////////////////////////
+
+// if (grille.children.length == true) {}      //Si tous les éléments sont modifiés alors afficher la variable jeuFin
 
 
 
