@@ -1,4 +1,24 @@
 /*////////////////////////////////////////////////////////////////////////////*/
+/*PARAMETRES*/
+/*////////////////////////////////////////////////////////////////////////////*/
+
+body {
+    text-align: center;
+    margin: 0px 195px;
+}
+
+p {
+    padding: 30px;
+    
+    text-align: justify;
+    font-style: italic;
+}
+
+h2 {
+    margin-top: 100px;
+}
+
+/*////////////////////////////////////////////////////////////////////////////*/
 /*EXO1*/
 /*////////////////////////////////////////////////////////////////////////////*/
 
@@ -11,6 +31,7 @@
     font-size: 2.5em;
     justify-content: center;
     align-items: center;
+    margin-left: 350px;
     cursor: pointer;
     animation: appear 1s;
 }
@@ -34,6 +55,8 @@
 #carres {
     display: flex;
     flex-wrap: wrap;
+    margin-left: 240px;
+    margin-right: 80px;
 }
 
 /*Ajouter "box" pour améliorer l'élément html*/
@@ -115,17 +138,6 @@
     }
 }
 
-/*RESPONSIVE*/
-@media (min-width: 0) and (max-width: 768px) {
-
-    .box {
-
-        width: 180px;
-        height: 180px;
-    }
-
-}
-
 /*////////////////////////////////////////////////////////////////////////////*/
 /*EXO3*/
 /*////////////////////////////////////////////////////////////////////////////*/
@@ -133,6 +145,7 @@
 #grille {
     display: flex;
     flex-wrap: wrap;
+    margin-left: 140px;
 }
 
 /*Ajouter "box1" pour améliorer l'élément html*/
@@ -144,7 +157,7 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 2.5em;
     text-align: center;
-    line-height: 3;
+    line-height: 5;
     margin: 5px;
     cursor: pointer;
     border-radius: 5px;
@@ -152,16 +165,6 @@
 
 h3 {
     text-align: center;
-}
-
-/*RESPONSIVE*/
-@media (min-width: 0) and (max-width: 768px) {
-
-    .box1 {
-
-        width: 120px;
-        height: 120px;
-    }
 }
 
 .box1-valid {
@@ -172,3 +175,66 @@ h3 {
 /*////////////////////////////////////////////////////////////////////////////*/
 /*EXO4*/
 /*////////////////////////////////////////////////////////////////////////////*/
+
+
+/*RESPONSIVE//////////////////////////////////////////////////////////////////*/
+@media (max-width: 1196px) {
+
+    .carre {
+        margin-left: 220px;
+    }
+
+    #carres {
+        margin-left: 110px;
+        margin-right: 80px;
+    }
+
+    #grille {
+        margin-left: 10px;
+    }
+}
+
+@media (min-width: 769) and (max-width: 1025px) {
+
+    .carre {
+        margin-left: 110px;
+    }
+
+    #carres {
+        margin-left: 110px;
+        margin-right: 80px;
+    }
+}
+
+@media (min-width: 0) and (max-width: 768px) {
+
+    body {
+        margin: 0px
+    }
+
+    .carre {
+        margin-left: 110px;
+    }
+
+    #carres {
+        margin-left: 25px;
+        margin-right: 0px;
+
+    }
+
+    #grille {
+        margin-left: 20px;
+    }
+
+    .box {
+        width: 180px;
+        height: 180px;
+    }
+
+    .box1 {
+        width: 120px;
+        height: 120px;
+        line-height: 3;
+    }
+    
+}
