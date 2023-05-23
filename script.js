@@ -156,7 +156,7 @@ for (let i = 1; i <= 9; i++) {
             value = true                        //Changer le statut pour vérouiller les éléments modifiés
 
             if (currentValue === "O") {         //Condition pour excécuter l'alternance des deux variables "X" et "O"
-                                                //Si la variable vaut "O", la suivante vaudra "X"
+                //Si la variable vaut "O", la suivante vaudra "X"
                 currentValue = "X"
 
             } else {                            //Sinon le cycle recommence avec la variable vaut "O" et ainsi de suite
@@ -166,29 +166,25 @@ for (let i = 1; i <= 9; i++) {
     })
 
 }
-//Déclarer la variable jeuFin en dehors de la boucle for (Cette variable sera affichée une fois que tous les éléments seront modifiés)
 
-let jeuFin = document.querySelector("h3")
+//Déclarer la variable jeuFin en dehors de la boucle for
+//(Cette variable masque le message (contenu dans la balise HTML "h3") au début de la partie)
 
+let jeuFin = document.querySelector("h3").style.display = 'none'
 console.log(jeuFin)
 
-jeuFin.forEach(function (element) {
-    element.style.color = "red"
-})
+//(Cette variable sera affichée dès que tous les éléments de base seront modifiés soit à la fin de la partie)
+//Pour lever la modification de cette balise écrire la condition ci dessous
 
-//////////////////////////////////////////////////////////////////////
-//  Ajouter une fonction qui éxécutera une animation pour
-//  faire disparaitre la fenêtre
-
-//setTimeout(function(){
-
-   // document.getElementById('messAdd').style.display= 'none';
-
-//}, 2000);
+if (grille.children.length = false) {
+    
+    jeuFin = document.querySelector('h3').style.display= 'flex'
+    //jeuFin = document.remove('h3')
+    console.log(jeuFin)
+}
 
 /////////////////////////////////////////////////////////////////////
 
-// if (grille.children.length == true) {}      //Si tous les éléments sont modifiés alors afficher la variable jeuFin
 
 
 
