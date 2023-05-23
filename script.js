@@ -18,7 +18,7 @@ let message = "Class : Carre\n" +
 
 
 //Vérifier si cet élément est pris en compte dans la console JS
-console.log(carre)
+//console.log(carre)
 
 //Ajouter à cet élément un écouteur d'évènement pour afficher un message au click
 carre.addEventListener("click", function () {
@@ -34,19 +34,6 @@ carre.addEventListener("click", function () {
 //////////////////////////////////////////////////////////////////////////////////////////////
 //EXO 2//
 //////////////////////////////////////////////////////////////////////////////////////////////
-
-//Par convention déclarer les fonctions en début de code
-//(CF Appel de la fonction en fin de code)
-
-//Pour générer une réaction quand l'élément est déjà cliqué
-// function showReaction(type, validBox) {
-//     validBox.classList.add(type)
-//     if (type !== "notice") {
-//         setTimeout(function () {
-//             validBox.classList.remove(type)
-//         }, 400)
-//     }
-// }
 
 //Déclarer l'élément HTML et l'instancier avec la fonction createElement 
 
@@ -97,7 +84,6 @@ for (let i = 1; i <= 4; i++) {
             //en cliquant une fois de plus sur l'élément déjà changé 
 
             newbox.classList.remove("box-valid")
-            // showReaction("notice", newbox)
             state = false // Pour réinitialiser l'état
         }
 
@@ -120,32 +106,44 @@ box1.classList.add("box1")
 
 const grille = document.querySelector("#grille")
 
+//Déclarer les variables avant la boucle for pour que celles ci permettent l'éxcecution des conditions
 
-//Déclarer la variable currentValue en dehors de la boucle for (Cette variable sera affichée dans l'élément modifié)
-
+//Déclarer la variable currentValue (Cette variable sera affichée dans l'élément modifié)
 let currentValue = "X"
 
-//Représenter l'élément HTML de base dans la boucle for pour générer 9 éléments du même type automatiquement avec la fonction cloneNode()
+//(Cette variable sert de référence pour attribuer un chiffre à chaque éléments)
+let nb = 0
 
-//Assimiler la variable currentValue aux 9 éléments avec innerText pour afficher cette variable au click
+//(Cette variable masque le message (contenu dans la balise HTML "h3") au début de la partie)
+let jeuFin = document.querySelector("h3").style.display = 'none'
+
+//Représenter l'élément HTML de base dans la boucle for pour générer 9 éléments du même type automatiquement avec la fonction cloneNode()
 
 for (let i = 1; i <= 9; i++) {
     const newbox = box1.cloneNode()
 
-    //Pour afficher l'élément HTML de base dans l'interface
+    //Pour afficher les éléments HTML de base de la boucle dans l'interface
 
     grille.appendChild(newbox)
 
-    //Valeur de référence type booléan
+    //Valeur de référence type booléan(Cette variable )
     let value = false
 
     //Rendre les éléments de base cliquables en ajoutant un écouteur d'évènements
 
     newbox.addEventListener("click", function () {
 
+        //Pour afficher dans la consôle les script en vue de contrôler leur bon fonctionnement
+
         console.log("Elément n°" + i + ": click !")
         console.log(value)
+        console.log(nb)
+        console.log(jeuFin)
 
+        //Pour attribuer un nombre à chaque éléments
+        nb++
+
+        //Assimiler la variable currentValue aux 9 éléments avec innerText 
         //Pour afficher les deux variables alternativement au click
 
         if (!value) { // Si la valeur des éléments de base est vide alors ajouter soit "X" soit "O"
@@ -153,34 +151,29 @@ for (let i = 1; i <= 9; i++) {
             newbox.classList.add("box1-valid")  //Pour afficher les éléments modifiés
             newbox.innerText = currentValue     //Pour afficher les variables "X" et "O"
 
-            value = true                        //Changer le statut pour vérouiller les éléments modifiés
+            value = true                        //Changer le statut pour verrouiller les éléments modifiés
 
             if (currentValue === "O") {         //Condition pour excécuter l'alternance des deux variables "X" et "O"
-                //Si la variable vaut "O", la suivante vaudra "X"
+                                                //Si la variable vaut "O", la suivante vaudra "X"
                 currentValue = "X"
 
             } else {                            //Sinon le cycle recommence avec la variable vaut "O" et ainsi de suite
                 currentValue = "O"
             }
+
+            if (nb >= 9) {
+
+                //(Cette variable sera de nouveau disponible à l'affichage
+                //dès que tous les éléments de base seront modifiés soit à la fin de la partie)
+
+                jeuFin = document.querySelector("h3").style.display = 'flex'
+                console.log(jeuFin)
+            }
+
         }
+
     })
 
-}
-
-//Déclarer la variable jeuFin en dehors de la boucle for
-//(Cette variable masque le message (contenu dans la balise HTML "h3") au début de la partie)
-
-let jeuFin = document.querySelector("h3").style.display = 'none'
-console.log(jeuFin)
-
-//(Cette variable sera affichée dès que tous les éléments de base seront modifiés soit à la fin de la partie)
-//Pour lever la modification de cette balise écrire la condition ci dessous
-
-if (grille.children.length = false) {
-    
-    jeuFin = document.querySelector('h3').style.display= 'flex'
-    //jeuFin = document.remove('h3')
-    console.log(jeuFin)
 }
 
 /////////////////////////////////////////////////////////////////////
