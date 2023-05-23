@@ -92,14 +92,6 @@ h2 {
 
 }
 
-/* .box.notice {
-    color: white;
-    background-color: rgb(115, 145, 5);
-    animation: rotateright 1s;
-    transform: scale(1);
-    transition: background-color 0.8s, color 0.8s, transform 0.8s;
-} */
-
 /*ANIMATIONS*/
 /*Animation rotation 360°*/
 
@@ -164,6 +156,7 @@ h2 {
 
 h3 {
     text-align: center;
+    margin-left: 360px;
 }
 
 .box1-valid {
@@ -191,6 +184,12 @@ h3 {
     #grille {
         margin-left: 10px;
     }
+
+    h3 {
+        text-align: center;
+        margin-left: 230px;
+    }
+
 }
 
 @media (min-width: 769) and (max-width: 1025px) {
@@ -203,6 +202,12 @@ h3 {
         margin-left: 110px;
         margin-right: 80px;
     }
+
+    h3 {
+        text-align: center;
+        margin-left: 230px;
+    }
+
 }
 
 @media (min-width: 0) and (max-width: 768px) {
@@ -225,6 +230,11 @@ h3 {
         margin-left: 20px;
     }
 
+    h3 {
+        text-align: center;
+        margin-left: 125px;
+    }
+    
     .box {
         width: 180px;
         height: 180px;
@@ -235,5 +245,5 @@ h3 {
         height: 120px;
         line-height: 3;
     }
-    
+
 }
