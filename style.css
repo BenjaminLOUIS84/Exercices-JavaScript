@@ -159,6 +159,19 @@ h3 {
     margin-left: 360px;
 }
 
+/* .players {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.playO,
+.playX {
+    text-align: center;
+} */
+
 .box1-valid {
     background-color: rgb(234, 226, 226);
     color: black;
@@ -234,7 +247,7 @@ h3 {
         text-align: center;
         margin-left: 125px;
     }
-    
+
     .box {
         width: 180px;
         height: 180px;

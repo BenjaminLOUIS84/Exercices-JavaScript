@@ -117,6 +117,12 @@ let nb = 0
 //(Cette variable masque le message (contenu dans la balise HTML "h3") au début de la partie)
 let jeuFin = document.querySelector("h3").style.display = 'none'
 
+//(Cette variable masque le message (contenu dans la balise HTML "playerX") au début de la partie)
+//let playerX = document.querySelector("ul").style.display = 'none'
+
+//(Cette variable masque le message (contenu dans la balise HTML "playerO") au début de la partie)
+//let playerO = document.querySelector("ul").style.display = 'none'
+
 //Représenter l'élément HTML de base dans la boucle for pour générer 9 éléments du même type automatiquement avec la fonction cloneNode()
 
 for (let i = 1; i <= 9; i++) {
@@ -153,12 +159,24 @@ for (let i = 1; i <= 9; i++) {
 
             value = true                        //Changer le statut pour verrouiller les éléments modifiés
 
-            if (currentValue === "O") {         //Condition pour excécuter l'alternance des deux variables "X" et "O"
-                                                //Si la variable vaut "O", la suivante vaudra "X"
+            //Pour que le chiffre ne change pas quand on click plusieurs fois sur le même élément
+
+            
+
+            //Condition pour excécuter l'alternance des deux variables "X" et "O"
+
+            if (currentValue === "O") {        //Si la variable vaut "O", la suivante vaudra "X"
                 currentValue = "X"
 
-            } else {                            //Sinon le cycle recommence avec la variable vaut "O" et ainsi de suite
+                //console.log(playerX)           //C'est au tour de X !
+                //playerX = document.querySelector("ul").style.display = 'flex'
+
+            } else {                           //Sinon le cycle recommence avec la variable vaut "O" et ainsi de suite
                 currentValue = "O"
+
+                //console.log(playerO)           //C'est au tour de O !
+                //playerO = document.querySelector("ul").style.display = 'flex'
+
             }
 
             if (nb >= 9) {
