@@ -86,115 +86,72 @@ for (let i = 1; i <= 4; i++) {
             newbox.classList.remove("box-valid")
             state = false // Pour réinitialiser l'état
         }
-
     })
-
 }
 //////////////////////////////////////////////////////////////////////////////////////////////
 //EXO 3//
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-//Déclarer l'élément HTML de base et l'instancier avec la fonction createElement 
+const box1 = document.createElement("div")                          //Déclarer l'élément HTML de base et l'instancier avec la fonction createElement 
+box1.classList.add("box1")                                          //Modifier sa propriété classList pour améliorer cet élément dans le CSS en lui ajoutant "box"
+const grille = document.querySelector("#grille")                    //Pour modifier cet élément dans le JavaScript on peut créer un selecteur de requête (mode plus dynamique)
 
-const box1 = document.createElement("div")
+let currentValue = "X"                                              //Déclarer les variables avant la boucle for pour que celles ci permettent l'éxcecution des conditions
+                                                                    //Déclarer la variable currentValue (Cette variable sera affichée dans l'élément modifié)
+let nb = 0                                                          //(Cette variable sert de référence pour attribuer un chiffre à chaque éléments)
+let jeuFin = document.querySelector("h3").style.display = 'none'    //(Cette variable masque le message (contenu dans la balise HTML "h3") au début de la partie)
 
-//Modifier sa propriété classList pour améliorer cet élément dans le CSS en lui ajoutant "box"
-
-box1.classList.add("box1")
-
-//Pour modifier cet élément dans le JavaScript on peut créer un selecteur de requête (mode plus dynamique)
-
-const grille = document.querySelector("#grille")
-
-//Déclarer les variables avant la boucle for pour que celles ci permettent l'éxcecution des conditions
-
-//Déclarer la variable currentValue (Cette variable sera affichée dans l'élément modifié)
-let currentValue = "X"
-
-//(Cette variable sert de référence pour attribuer un chiffre à chaque éléments)
-let nb = 0
-
-//(Cette variable masque le message (contenu dans la balise HTML "h3") au début de la partie)
-let jeuFin = document.querySelector("h3").style.display = 'none'
-
+/////////////////////////////////////////////////////////////////////////////////////////////
 //(Cette variable masque le message (contenu dans la balise HTML "playerX") au début de la partie)
 //let playerX = document.querySelector("ul").style.display = 'none'
 
 //(Cette variable masque le message (contenu dans la balise HTML "playerO") au début de la partie)
 //let playerO = document.querySelector("ul").style.display = 'none'
+/////////////////////////////////////////////////////////////////////////////////////////////
 
-//Représenter l'élément HTML de base dans la boucle for pour générer 9 éléments du même type automatiquement avec la fonction cloneNode()
-
-for (let i = 1; i <= 9; i++) {
-    const newbox = box1.cloneNode()
-
-    //Pour afficher les éléments HTML de base de la boucle dans l'interface
-
-    grille.appendChild(newbox)
-
-    //Valeur de référence type booléan(Cette variable )
-    let value = false
-
-    //Rendre les éléments de base cliquables en ajoutant un écouteur d'évènements
-
+for (let i = 1; i <= 9; i++) {                                      //Représenter l'élément HTML de base dans la boucle for
+    const newbox = box1.cloneNode()                                 //pour générer 9 éléments du même type automatiquement avec la fonction cloneNode()
+    grille.appendChild(newbox)                                      //Pour afficher les éléments HTML de base de la boucle dans l'interface
+    let value = false                                               //Valeur de référence type booléan(Cette variable )
+                                                                    //Rendre les éléments de base cliquables en ajoutant un écouteur d'évènements
     newbox.addEventListener("click", function () {
 
-        //Pour afficher dans la consôle les script en vue de contrôler leur bon fonctionnement
-
-        console.log("Elément n°" + i + ": click !")
+        console.log("Elément n°" + i + ": click !")                 //Pour afficher dans la consôle les script en vue de contrôler leur bon fonctionnement
         console.log(value)
         console.log(nb)
         console.log(jeuFin)
-
-        //Pour attribuer un nombre à chaque éléments
-        
-
-        //Assimiler la variable currentValue aux 9 éléments avec innerText 
-        //Pour afficher les deux variables alternativement au click
-
-        if (!value) { // Si la valeur des éléments de base est vide alors ajouter soit "X" soit "O"
-
-            newbox.classList.add("box1-valid")  //Pour afficher les éléments modifiés
-            newbox.innerText = currentValue     //Pour afficher les variables "X" et "O"
-
-            value = true                        //Changer le statut pour verrouiller les éléments modifiés
-
-            //Pour que le chiffre ne change pas quand on click plusieurs fois sur le même élément
-
-            
-
-            //Condition pour excécuter l'alternance des deux variables "X" et "O"
-
-            if (currentValue === "O") {        //Si la variable vaut "O", la suivante vaudra "X"
-                currentValue = "X"
-                nb++
-                //console.log(playerX)           //C'est au tour de X !
-               // playerX = document.querySelector("ul").style.display = 'flex'
-
-            } else {                           //Sinon le cycle recommence avec la variable vaut "O" et ainsi de suite
+                                                                    //Assimiler la variable currentValue aux 9 éléments avec innerText 
+                                                                    //Pour afficher les deux variables alternativement au click
+        if (!value) {                                               // Si la valeur des éléments de base est vide alors ajouter soit "X" soit "O"
+            newbox.classList.add("box1-valid")                      //Pour afficher les éléments modifiés
+            newbox.innerText = currentValue                         //Pour afficher les variables "X" et "O"
+            value = true                                            //Changer le statut pour verrouiller les éléments modifiés
+                                                                   
+            if (currentValue === "O") {                             //Condition pour excécuter l'alternance des deux variables "X" et "O"
+                currentValue = "X"                                  //Si la variable vaut "O", la suivante vaudra "X"
+                nb++                                                //Pour attribuer un nombre à chaque éléments et pour que le chiffre ne change pas
+                                                                    //quand on click plusieurs fois sur le même élément
+                /////////////////////////////////////////////////////////////////////////////////////////////
+                // console.log(playerX)                             //C'est au tour de X !
+                // playerX = document.querySelector("ul").style.display = 'flex'
+                /////////////////////////////////////////////////////////////////////////////////////////////
+            } else {                                                //Sinon le cycle recommence avec la variable vaut "O" et ainsi de suite
                 currentValue = "O"
                 nb++
-                //console.log(playerO)           //C'est au tour de O !
-              //  playerO = document.querySelector("ul").style.display = 'flex'
 
+                /////////////////////////////////////////////////////////////////////////////////////////////
+                // console.log(playerO)                             //C'est au tour de O !
+                // playerO = document.querySelector("ul").style.display = 'flex'
+                /////////////////////////////////////////////////////////////////////////////////////////////
             }
 
-            if (nb >= 9 ) {
-
-                // (Cette variable sera de nouveau disponible à l'affichage
-                // dès que tous les éléments de base seront modifiés soit à la fin de la partie)
-
-               jeuFin = document.querySelector("h3").style.display = 'flex'
+            if (nb >= 9 ) {                                         //Cette variable sera de nouveau disponible à l'affichage dès que tous les éléments de base seront modifiés 
+                jeuFin = document.querySelector("h3").style.display = 'flex'
                 console.log(jeuFin)
            }
-
         }
-
     })
-
 }
-
-/////////////////////////////////////////////////////////////////////
 
 
 
