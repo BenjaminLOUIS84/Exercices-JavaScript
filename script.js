@@ -147,7 +147,7 @@ for (let i = 1; i <= 9; i++) {
         console.log(jeuFin)
 
         //Pour attribuer un nombre à chaque éléments
-        nb++
+        
 
         //Assimiler la variable currentValue aux 9 éléments avec innerText 
         //Pour afficher les deux variables alternativement au click
@@ -167,26 +167,26 @@ for (let i = 1; i <= 9; i++) {
 
             if (currentValue === "O") {        //Si la variable vaut "O", la suivante vaudra "X"
                 currentValue = "X"
-
+                nb++
                 //console.log(playerX)           //C'est au tour de X !
-                //playerX = document.querySelector("ul").style.display = 'flex'
+               // playerX = document.querySelector("ul").style.display = 'flex'
 
             } else {                           //Sinon le cycle recommence avec la variable vaut "O" et ainsi de suite
                 currentValue = "O"
-
+                nb++
                 //console.log(playerO)           //C'est au tour de O !
-                //playerO = document.querySelector("ul").style.display = 'flex'
+              //  playerO = document.querySelector("ul").style.display = 'flex'
 
             }
 
-            if (nb >= 9) {
+            if (nb >= 9 ) {
 
-                //(Cette variable sera de nouveau disponible à l'affichage
-                //dès que tous les éléments de base seront modifiés soit à la fin de la partie)
+                // (Cette variable sera de nouveau disponible à l'affichage
+                // dès que tous les éléments de base seront modifiés soit à la fin de la partie)
 
-                jeuFin = document.querySelector("h3").style.display = 'flex'
+               jeuFin = document.querySelector("h3").style.display = 'flex'
                 console.log(jeuFin)
-            }
+           }
 
         }
 
