@@ -123,6 +123,7 @@ for (let i = 1; i <= 9; i++) {                                      //Représent
             if (currentValue === "O") {                             //Condition pour afficher alternativement au click les deux variables "X" et "O"
                 currentValue = "X"                                  //Si la variable vaut "O", la suivante vaudra "X"
                 nb++                                                //Pour attribuer un nombre à chaque éléments et pour que le chiffre ne change pas quand on click plusieurs fois sur le même élément
+            
             } else {                                                
                 currentValue = "O"                                  //Sinon le cycle recommence avec la variable vaut "O" et ainsi de suite
                 nb++
