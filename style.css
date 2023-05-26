@@ -154,6 +154,13 @@ h2 {
     border-radius: 5px;
 }
 
+.box2 {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+    animation: move 1s;
+}
+
 h3 {
     text-align: center;
     margin-left: 360px;

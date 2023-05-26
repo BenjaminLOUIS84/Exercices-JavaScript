@@ -96,10 +96,18 @@ const box1 = document.createElement("div")                          //Déclarer 
 box1.classList.add("box1")                                          //Modifier sa propriété classList pour améliorer cet élément dans le CSS en lui ajoutant "box"
 const grille = document.querySelector("#grille")                    //Pour modifier cet élément dans le JavaScript on peut créer un selecteur de requête (mode plus dynamique)
 
-let currentValue = "X"                                              //Déclarer les variables avant la boucle for pour que celles ci permettent l'éxcecution des conditions
-                                                                    
+const box2 = document.createElement("div")                          //Créer un autre élément play pour désigner le tour du joueur
+box2.classList.add("box2")
+const play = document.querySelector("#play")                        //Déclarer les variables avec "let" avant la boucle for pour que celles ci permettent l'éxcecution des conditions
+
+
+let currentValue = "X"                                              //(Cette variable affiche "X" initialement)
+let mess = "C'est au tour de O !"                                   //(Cette variable affiche ce message initialement)
+
 let nb = 0                                                          //(Cette variable sert de référence pour attribuer un chiffre à chaque éléments)
 let jeuFin = document.querySelector("h3").style.display = 'none'    //(Cette variable masque le message (contenu dans la balise HTML "h3") au début de la partie)
+
+
 
 
 for (let i = 1; i <= 9; i++) {                                      //Représenter l'élément HTML de base dans la boucle for
@@ -113,13 +121,18 @@ for (let i = 1; i <= 9; i++) {                                      //Représent
         console.log(value)
         console.log(nb)
         console.log(jeuFin)
-                                                                      
-                                                                    
+                              
+        
         if (!value) {                                               // Si la valeur des éléments de base est vide alors ajouter soit "X" soit "O"
             newbox.classList.add("box1-valid")                      //Pour afficher les éléments modifiés
             newbox.innerText = currentValue                         //Pour afficher les variables "X" et "O" innerText permet d'assimiler la variable currentValue aux 9 éléments
             value = true                                            //Changer le statut pour verrouiller les éléments modifiés
-                                                                   
+            
+            console.log(play)
+            play.appendChild(box2)
+            box2.innerText = mess
+
+
             if (currentValue === "O") {                             //Condition pour afficher alternativement au click les deux variables "X" et "O"
                 currentValue = "X"                                  //Si la variable vaut "O", la suivante vaudra "X"
                 nb++                                                //Pour attribuer un nombre à chaque éléments et pour que le chiffre ne change pas quand on click plusieurs fois sur le même élément
