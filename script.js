@@ -100,14 +100,12 @@ const box2 = document.createElement("div")                          //Créer un 
 box2.classList.add("box2")
 const play = document.querySelector("#play")                        //Déclarer les variables avec "let" avant la boucle for pour que celles ci permettent l'éxcecution des conditions
 
-
 let currentValue = "X"                                              //(Cette variable affiche "X" initialement)
-let mess = "C'est au tour de O !"                                   //(Cette variable affiche ce message initialement)
+let messO = "C'est au tour de O !"                                  //(Cette variable affiche ce message pour désigner O)
+let messX = "C'est au tour de X !"                                  //(Cette variable affiche ce message pour désigner X)
 
 let nb = 0                                                          //(Cette variable sert de référence pour attribuer un chiffre à chaque éléments)
 let jeuFin = document.querySelector("h3").style.display = 'none'    //(Cette variable masque le message (contenu dans la balise HTML "h3") au début de la partie)
-
-
 
 
 for (let i = 1; i <= 9; i++) {                                      //Représenter l'élément HTML de base dans la boucle for
@@ -127,19 +125,21 @@ for (let i = 1; i <= 9; i++) {                                      //Représent
             newbox.classList.add("box1-valid")                      //Pour afficher les éléments modifiés
             newbox.innerText = currentValue                         //Pour afficher les variables "X" et "O" innerText permet d'assimiler la variable currentValue aux 9 éléments
             value = true                                            //Changer le statut pour verrouiller les éléments modifiés
-            
-            console.log(play)
-            play.appendChild(box2)
-            box2.innerText = mess
-
+        
 
             if (currentValue === "O") {                             //Condition pour afficher alternativement au click les deux variables "X" et "O"
                 currentValue = "X"                                  //Si la variable vaut "O", la suivante vaudra "X"
                 nb++                                                //Pour attribuer un nombre à chaque éléments et pour que le chiffre ne change pas quand on click plusieurs fois sur le même élément
-            
+                console.log(play)
+                play.appendChild(box2)
+                box2.innerText = messX
+
             } else {                                                
                 currentValue = "O"                                  //Sinon le cycle recommence avec la variable vaut "O" et ainsi de suite
                 nb++
+                console.log(play)
+                play.appendChild(box2)
+                box2.innerText = messO
             }
 
             if (nb >= 9 ) {                                         //Cette variable sera de nouveau disponible à l'affichage dès que tous les éléments de base seront modifiés 
