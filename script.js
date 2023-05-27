@@ -145,6 +145,7 @@ for (let i = 1; i <= 9; i++) {                                      //Représent
             if (nb >= 9 ) {                                         //Cette variable sera de nouveau disponible à l'affichage dès que tous les éléments de base seront modifiés 
                 jeuFin = document.querySelector("h3").style.display = 'flex'
                 console.log(jeuFin)
+                play.removeChild(box2)                              //Le message désignant les joueurs disparait
            }
         }
     })
