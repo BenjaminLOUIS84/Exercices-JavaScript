@@ -162,7 +162,7 @@ let plan = document.querySelector("#plan")                          //Pour modif
 let ice = 0                                                         //Variable de référence pour incrémenter un nombre à chaque ajout de cubes
 
 document.addEventListener("keydown", function() {                   //Ajouter un écouteur d'évenements à document pour ajouter un cube avec les touches du clavier
-
+    
     console.log("key Pressed");
     console.log(cube);
     console.log(ice)
@@ -171,6 +171,9 @@ document.addEventListener("keydown", function() {                   //Ajouter un
     let newcube = cube.cloneNode()                                  //Variable qui va cloner un cube
     plan.appendChild(newcube)                                       //Afficher un cube à chaque touche du clavier pressée
 
+    newcube.addEventListener("click", function(){                   //Rendre les cubes cliquables 
+        newcube.classList.add("blackCube")                          //Changer les cubes en noir au click
+    })
 });
 
 

@@ -196,10 +196,12 @@ h3 {
     height: 60px;
     background: tomato;
     margin: 2px;
-    
+    cursor: pointer;
 }
 
-
+.blackCube {
+    background-color: black;
+}
 
 
 
