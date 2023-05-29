@@ -137,12 +137,17 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     margin-left: 140px;
-    background-image: url(./image/morpion.jpg);
+    /* background-image: url(./image/morpion.jpg);
     background-size: contain;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
 
 }
 
+.fond {
+    background-image: url(./image/jeu.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 /*Ajouter "box1" pour améliorer l'élément html*/
 
 .box1 {
@@ -212,7 +217,7 @@ h3 {
     }
 
     #grille {
-        margin-left: 15px;
+        margin-left: 20px;
     }
 
     h3 {
