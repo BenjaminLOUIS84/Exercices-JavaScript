@@ -202,11 +202,11 @@ h3 {
 @media (max-width: 1196px) {
 
     .carre {
-        margin-left: 220px;
+        margin-left: 200px;
     }
 
     #carres {
-        margin-left: 110px;
+        margin-left: 90px;
         margin-right: 80px;
     }
 
@@ -219,9 +219,16 @@ h3 {
         margin-left: 230px;
     }
 
+    .box1 {
+        width: 190px;
+        height: 190px;
+        line-height: 3;
+    }
+
+
 }
 
-@media (min-width: 769) and (max-width: 1025px) {
+@media (min-width: 769) and (max-width: 1196px) {
 
     .carre {
         margin-left: 110px;
