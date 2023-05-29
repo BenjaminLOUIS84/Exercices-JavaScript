@@ -155,6 +155,35 @@ for (let i = 1; i <= 9; i++) {                                      //Représent
 //////////////////////////////////////////////////////////////////////////////////////////////
 
 
+let cube = document.createElement("div")                            //Déclarer l'élément HTML de base et l'instancier avec la fonction createElement 
+cube.classList.add("cube")                                          //Modifier sa propriété classList pour améliorer cet élément dans le CSS en lui ajoutant "cube"
+let plan = document.querySelector("#plan")                          //Pour modifier cet élément dans le JavaScript on peut créer un selecteur de requête (mode plus dynamique)
+
+let ice = 0                                                         //Variable de référence pour incrémenter un nombre à chaque ajout de cubes
+
+document.addEventListener("keydown", function() {                   //Ajouter un écouteur d'évenements à document pour ajouter un cube avec les touches du clavier
+
+    console.log("key Pressed");
+    console.log(cube);
+    console.log(ice)
+    ice++
+
+    let newcube = cube.cloneNode()                                  //Variable qui va cloner un cube
+    plan.appendChild(newcube)                                       //Afficher un cube à chaque touche du clavier pressée
+
+});
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+//A FAIRE:  Limiter la fonction d'ajout de cube seulement à la touche Down du clavier
+//          Changer la couleur des cubes de façon aléatoire 
+
+
+
+
+
+
 
 
 
