@@ -199,19 +199,20 @@ h3 {
 
 /*RESPONSIVE//////////////////////////////////////////////////////////////////*/
 
-@media (max-width: 1196px) {
+@media  (max-width: 1196px) {
 
     .carre {
-        margin-left: 200px;
+        margin-left: 130px;
     }
+    
 
     #carres {
-        margin-left: 90px;
-        margin-right: 80px;
+        margin-left: 25px;
+        margin-right: 0px;
     }
 
     #grille {
-        margin-left: 10px;
+        margin-left: 15px;
     }
 
     h3 {
@@ -220,30 +221,11 @@ h3 {
     }
 
     .box1 {
-        width: 190px;
-        height: 190px;
+        width: 140px;
+        height: 140px;
         line-height: 3;
     }
-
-
-}
-
-@media (min-width: 769) and (max-width: 1196px) {
-
-    .carre {
-        margin-left: 100px;
-    }
-
-    #carres {
-        margin-left: 110px;
-        margin-right: 80px;
-    }
-
-    h3 {
-        text-align: center;
-        margin-left: 230px;
-    }
-
+   
 }
 
 @media (min-width: 0) and (max-width: 768px) {
