@@ -165,25 +165,31 @@ document.addEventListener("keydown", function(event) {          //Ajouter un éc
     
     if (event.key == "ArrowDown"){                              //Ajouter event dans une condition pour que l'action se déclenche avec juste la touche flèche du bas du clavier
         
-        console.log("key Pressed");
-        console.log(cube);
-        console.log(ice)
+        //console.log("key Pressed");
+        //console.log(cube);
+        //console.log(ice)
         ice++                                                   //Incrémenter +1 à chaque click            
 
         let newcube = cube.cloneNode()                          //Variable qui va cloner un cube
-        plan.appendChild(newcube).style.backgroundColor = "#"   //Afficher un cube au click de la touche flèche bas du clavier
 
-        + (Math.floor(Math.random()*16777215).toString(16))     //Attribution d'une couleur aléatoire au style CSS
+
+
+        plan.appendChild(newcube).style.backgroundColor = "#"   //Afficher un cube au click et attribuer une couleur aléatoire au style CSS avec .style.backgroundColor
+
+        + (Math.floor(Math.random()*16777215).toString(16))     //Faire un Math.floor d'un chiffre random (entre 0 et 1 * 16m de couleurs) qu'on ressort en tostring (base 16) ce qui sortira une suite de caractères hexadecimaux.
+        
+        //console.log(newcube)
 
         newcube.addEventListener("click", function(){           //Rendre les cubes cliquables 
-            newcube.classList.add("blackCube")                  //Changer les cubes en noir au click
-            console.log("Elément: click !")
+
+            newcube.style.backgroundColor = "black"             //Changer les cubes en noir au click
+            //console.log("Elément: click !")
+
         })
 
     }
 
 });
-
 
 document.addEventListener("keydown", function(event) {          //Ajouter un écouteur d'évenements à document pour supprimer un cube avec les touches du clavier
     
