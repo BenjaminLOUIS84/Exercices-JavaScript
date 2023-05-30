@@ -200,14 +200,25 @@ h3 {
     cursor: pointer;
 }
 
+/*////////////////////////////////////////////////////////////////////////////*/
+/*EXO5*/
+/*////////////////////////////////////////////////////////////////////////////*/
 
 
+#convert {
+    display: flex;
+    justify-content: center;
+}
 
+.conv {
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    /*Effet de transparence*/
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1),whitesmoke);
+    backdrop-filter: blur(20px);
 
-
-
-
-
+}
 
 
 /*RESPONSIVE//////////////////////////////////////////////////////////////////*/
