@@ -118,15 +118,13 @@ for (let i = 1; i <= 9; i++) {                                      //Représent
         console.log("Elément n°" + i + ": click !")                 //Pour afficher dans la consôle les script en vue de contrôler leur bon fonctionnement
         console.log(value)
         console.log(nb)
-        console.log(jeuFin)
-                              
+        console.log(jeuFin)                    
         
         if (!value) {                                               // Si la valeur des éléments de base est vide alors ajouter soit "X" soit "O"
             newbox.classList.add("box1-valid")                      //Pour afficher les éléments modifiés
             newbox.innerText = currentValue                         //Pour afficher les variables "X" et "O" innerText permet d'assimiler la variable currentValue aux 9 éléments
             value = true                                            //Changer le statut pour verrouiller les éléments modifiés
         
-
             if (currentValue === "O") {                             //Condition pour afficher alternativement au click les deux variables "X" et "O"
                 currentValue = "X"                                  //Si la variable vaut "O", la suivante vaudra "X"
                 nb++                                                //Pour attribuer un nombre à chaque éléments et pour que le chiffre ne change pas quand on click plusieurs fois sur le même élément
@@ -154,7 +152,6 @@ for (let i = 1; i <= 9; i++) {                                      //Représent
 //EXO 4//
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-
 let cube = document.createElement("div")                        //Déclarer l'élément HTML de base et l'instancier avec la fonction createElement 
 cube.classList.add("cube")                                      //Modifier sa propriété classList pour améliorer cet élément dans le CSS en lui ajoutant "cube"
 let plan = document.querySelector("#plan")                      //Pour modifier cet élément dans le JavaScript on peut créer un selecteur de requête (mode plus dynamique)
@@ -172,8 +169,6 @@ document.addEventListener("keydown", function(event) {          //Ajouter un éc
 
         let newcube = cube.cloneNode()                          //Variable qui va cloner un cube
 
-
-
         plan.appendChild(newcube).style.backgroundColor = "#"   //Afficher un cube au click et attribuer une couleur aléatoire au style CSS avec .style.backgroundColor
 
         + (Math.floor(Math.random()*16777215).toString(16))     //Faire un Math.floor d'un chiffre random (entre 0 et 1 * 16m de couleurs) qu'on ressort en tostring (base 16) ce qui sortira une suite de caractères hexadecimaux.
@@ -184,9 +179,7 @@ document.addEventListener("keydown", function(event) {          //Ajouter un éc
 
             newcube.style.backgroundColor = "black"             //Changer les cubes en noir au click
             //console.log("Elément: click !")
-
         })
-
     }
 
 });
@@ -203,7 +196,6 @@ document.addEventListener("keydown", function(event) {          //Ajouter un éc
         let newcube = cube.cloneNode()                          //Variable qui va cloner un cube
         plan.firstElementChild.remove(newcube)                  //Supprimer un cube au click de la touche flèche haut du clavier
     }
-
 });
 
 //////////////////////////////////////////////////////////////////////////////////////////////
