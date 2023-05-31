@@ -207,18 +207,14 @@ conv.classList.add("conv")                                                  //Mo
 let convert = document.querySelector("#convert")                            //Pour modifier cet élément dans le JavaScript on peut créer un selecteur de requête (mode plus dynamique)
 conv.textContent = "Valeur en euros"
 
-
-
 console.log(conv)
 convert.appendChild(conv)
 
-const el = document.createElement("input");
-el.className = "integr_elements";
-
-el.id = "name";
-
-const form = document.getElementById("myForm");
-form.appendChild(el);
+const el = document.createElement("input");                                 //Créer un champ de saisi type input
+//el.className = "integr_elements";
+//el.id = "name";
+const form = document.getElementById("myForm");                             //Modifier cet élément dans le JavaScript
+form.appendChild(el);                                                       //Afficher cet élément
 
 
 
