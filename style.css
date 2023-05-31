@@ -5,6 +5,7 @@
 body {
     text-align: center;
     margin: 0px 195px;
+    height: max-content;
 }
 
 p {
@@ -210,14 +211,21 @@ h3 {
     justify-content: center;
 }
 
-.conv {
-    width: 200px;
-    height: 200px;
-    border-radius: 5px;
-    /*Effet de transparence*/
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1),whitesmoke);
-    backdrop-filter: blur(20px);
+.fond1 {
+    background-image: url(./image/bourse.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
+.conv {
+    width: 300px;
+    height: 300px;
+    border-radius: 5px;
+    margin: 70px;
+
+    /*Effet de transparence*/
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1),transparent);
+    backdrop-filter: blur(20px);
 }
 
 
@@ -250,6 +258,16 @@ h3 {
         line-height: 3.5;
     }
    
+    .fond1 {
+        background-size: contain;
+    }
+    
+    .conv {
+        margin: 35px;
+        width: 130px;
+        height: 130px;
+    }
+
 }
 
 @media (min-width: 0) and (max-width: 768px) {
@@ -287,4 +305,16 @@ h3 {
         height: 120px;
         line-height: 3;
     }
+
+    .fond1 {
+        background-size: contain;
+    }
+    
+    .conv {
+        margin: 35px;
+        width: 130px;
+        height: 130px;
+    }
+
+
 }
