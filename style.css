@@ -153,7 +153,7 @@ h2 {
     height: 200px;
 
     /*Effet de transparence*/
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1),grey);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), grey);
     backdrop-filter: blur(8px);
 
     font-family: Arial, Helvetica, sans-serif;
@@ -213,8 +213,10 @@ h3 {
 
 .fond1 {
     background-image: url(./image/bourse.jpg);
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
+    margin-bottom: 80px;
+    line-height: 8.5;
 }
 
 .conv {
@@ -223,25 +225,31 @@ h3 {
     border-radius: 5px;
     margin: 70px;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 2em;
+    font-size: 1.7em;
     color: white;
     text-align: center;
     /* line-height: 5; */
 
     /*Effet de transparence*/
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1),grey);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), grey);
     backdrop-filter: blur(8px);
 }
 
+input {
+    width: 100px;
+    position: relative;
+    bottom: 270px; 
+    padding: 10px;
+}
 
 /*RESPONSIVE//////////////////////////////////////////////////////////////////*/
 
-@media  (max-width: 1196px) {
+@media (max-width: 1196px) {
 
     .carre {
         margin-left: 130px;
     }
-    
+
 
     #carres {
         margin-left: 25px;
@@ -262,12 +270,7 @@ h3 {
         height: 140px;
         line-height: 3.5;
     }
-   
-    .fond1 {
-        background-size: contain;
-        margin-left: 25px;
-    }
-    
+
     .conv {
         margin: 35px;
         width: 130px;
@@ -275,6 +278,16 @@ h3 {
         font-size: 1em;
     }
 
+    .fond1 {
+        line-height: 6.5;
+    }
+
+    input {
+        width: 80px;
+        position: relative;
+        bottom: 140px;
+        padding: 0px;
+    }
 }
 
 @media (min-width: 0) and (max-width: 768px) {
@@ -314,16 +327,21 @@ h3 {
     }
 
     .fond1 {
-        background-size: contain;
         margin-left: 4px;
     }
-    
+
     .conv {
         margin: 35px;
         width: 130px;
         height: 130px;
-        font-size: 1em;
+        font-size: 0.9em;
+        line-height: 6;
     }
 
+    input {
+        width: 80px;
+        position: relative;
+        bottom: 150px;
+    }
 
 }

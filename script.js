@@ -202,15 +202,23 @@ document.addEventListener("keydown", function(event) {          //Ajouter un éc
 //EXO 5//
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-let conv = document.createElement("div")                                  //Déclarer l'élément HTML de base et l'instancier avec la fonction createElement 
-conv.classList.add("conv")                                            //Modifier sa propriété classList pour améliorer cet élément dans le CSS en lui ajoutant "cube"
-let convert = document.querySelector("#convert")                      //Pour modifier cet élément dans le JavaScript on peut créer un selecteur de requête (mode plus dynamique)
+let conv = document.createElement("div")                                    //Déclarer l'élément HTML de base et l'instancier avec la fonction createElement 
+conv.classList.add("conv")                                                  //Modifier sa propriété classList pour améliorer cet élément dans le CSS en lui ajoutant "cube"
+let convert = document.querySelector("#convert")                            //Pour modifier cet élément dans le JavaScript on peut créer un selecteur de requête (mode plus dynamique)
 conv.textContent = "Valeur en euros"
+
+
 
 console.log(conv)
 convert.appendChild(conv)
 
+const el = document.createElement("input");
+el.className = "integr_elements";
 
+el.id = "name";
+
+const form = document.getElementById("myForm");
+form.appendChild(el);
 
 
 
