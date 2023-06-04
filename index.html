@@ -90,10 +90,16 @@
 
     <div class="fond1">
         <div id="convert"></div>
-        <form id="myForm"></form>
+
+        <form oninput="result.value=parseInt(a.value)">
+
+            <input type="text" placeholder= "" id="in" name="a" value="" /> 
+            <output name="result"></output>
+
+        </form>
+
+
     </div>
-
-
 
     <script src="script.js"></script>
 

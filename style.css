@@ -238,8 +238,15 @@ h3 {
 input {
     width: 100px;
     position: relative;
-    bottom: 280px; 
+    bottom: 280px;
     padding: 8px;
+}
+
+output {
+    position: absolute;
+    right: 600px;
+    top: 2900px;
+    color: white;
 }
 
 /*RESPONSIVE//////////////////////////////////////////////////////////////////*/
@@ -288,6 +295,12 @@ input {
         bottom: 140px;
         padding: 0px;
     }
+
+    output {
+        right: 456px;
+        top: 2790px;
+    }
+
 }
 
 @media (min-width: 0) and (max-width: 768px) {
@@ -326,10 +339,6 @@ input {
         line-height: 3;
     }
 
-    .fond1 {
-        margin-left: 4px;
-    }
-
     .conv {
         margin: 35px;
         width: 130px;
@@ -342,6 +351,11 @@ input {
         width: 80px;
         position: relative;
         bottom: 150px;
+    }
+
+    output {
+        right: 165px;
+        top: 2910px;
     }
 
 }
