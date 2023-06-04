@@ -210,57 +210,7 @@ conv.textContent = "Valeur en euros"
 //console.log(conv)
 convert.appendChild(conv)
 
-
-//let inputValue = document.getElementById("domTextElement").value
-//document.getElementById("valueInput").innerHTML = inputValue
-
-
-
-
-
-
-
-
-// let input = document.getElementById("in")                              // Sélectionner l'élément input et récupérer sa valeur
-// let valeur = document.getElementById("valeur")                         // Sélectionner l'élément valeur et récupérer sa valeur
-// //console.log (input)
-
-
-// function recup(){
-//     console.log (valeur) 
-//     valeur.innerHTML = input                                          // Afficher la valeur de l'élément valeur
-//     input.textContent = valeur
-// }
-
-
-//  input.addEventListener("click", function(){ // Au clic de l'inputField, on la vide à chaque fois comme une réinitialisation
-//      input.value = valeur
-//      message.textContent = "Valeur en francs :" // On réaffiche le message de base.
-//  })
-
-
-
-
-
-
-
-
-//  input.onkeyup = function(){ // form.onkeyup, si une touche du clavier est levée. (onkeydown ne fonctionnait pas correctement pour cette fct)
-
-//    if (isNaN(input.value)){ // isNaN est une fct native de JS pour "Is Not a Number". Retourne true si c'est le cas. Donc si true alors on affiche un message d'alerte.
-
-//      message.textContent = "Veuillez saisir un nombre !" // msg d'alerte si on ne rentre pas de nombre.
-
-//     } else {
-
-//      message.textContent = "Valeur en francs : " + ((input.value) * 6.55957).toFixed(2) // nombre.toFixed(2) veut dire qu'on fixe les décimales à 2 max.
-
-//    } 
-//  }
-
-
-
-
-
+let euro = document.getElementById("resultat")
+console.log(euro)
 
 //////////////////////////////////////////////////////////////////////////////////////////////
