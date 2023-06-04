@@ -210,7 +210,8 @@ conv.textContent = "Valeur en euros"
 //console.log(conv)
 convert.appendChild(conv)
 
-let euro = document.getElementById("resultat")
-console.log(euro)
+
+
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////
